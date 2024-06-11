@@ -7,9 +7,9 @@ import time
 conf = {'bootstrap.servers': 'localhost:9092'}
 producer = Producer(**conf)
 
-# Alpha Vantage API endpoint
+# Alpha Vantage API 
 api_key = 'X4IQ127ELWY7IV84'
-symbol = 'AAPL'  # Example stock symbol
+symbol = 'AAPL'  
 api_url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval=1min&apikey={api_key}'
 
 def delivery_report(err, msg):
@@ -27,7 +27,7 @@ def fetch_data():
             message = {'timestamp': timestamp, **values}
             producer.produce('alpha_vantage_data', key=timestamp, value=json.dumps(message), callback=delivery_report)
             producer.flush()
-            time.sleep(1)  # simulate delay
+            time.sleep(1)  
     else:
         print(f"Failed to fetch data: {response.status_code}")
 
