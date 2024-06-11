@@ -4,6 +4,8 @@ This project demonstrates a data pipeline that fetches stock data from the Alpha
 
 ## Pipline Architecture
 
+![Pipeline Architecture](https://github.com/ZakariaeBAHARI/Financial_Data_Pipline/blob/main/architecture.png)
+
 ## Project Structure
 
 - `docker-compose.yml`: Docker Compose file to set up Kafka, Zookeeper, and PostgreSQL.
